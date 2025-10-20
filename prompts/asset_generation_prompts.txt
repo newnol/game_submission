@@ -1,0 +1,2 @@
+Generate simple flat-style icons for: tree, solar, wind, recycle, alert, goal.
+Use a playful color palette suitable for educational games.

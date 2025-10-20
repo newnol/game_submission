@@ -1,0 +1,2 @@
+Polish animations for dice roll and player movement; ensure consistent easing.
+Tweak cell colors for accessibility contrast; validate on light/dark backgrounds.

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eco Dice</title>
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <script src="https://unpkg.com/phaser@3.70.0/dist/phaser.min.js"></script>
+    <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="frame" id="frame-root">
+        <div class="topbar">
+          <div class="title">🌍 ECO DICE</div>
+          <div class="top-actions">
+            <button class="btn" id="btn-help">❔ Help</button>
+            <button class="btn" id="btn-restart">🔄 Restart</button>
+          </div>
+        </div>
+        <div class="heatbar" aria-label="Earth Heat">
+          <div class="heat-fill" id="heat-fill" style="width:0%"></div>
+        </div>
+        <div id="game"></div>
+        <div id="dice-3d" aria-hidden="true">🎲</div>
+        <div id="tooltip" class="tooltip" style="display:none"></div>
+        <div class="legend">
+          <span>🟩 clean</span>
+          <span>🟧 warning</span>
+          <span>🟥 crisis</span>
+        </div>
+        <div class="dock">
+          <button id="pu-reroll" class="pill">🔁 Reroll <span class="muted" id="pu-reroll-c">0</span></button>
+          <button id="pu-offset" class="pill">🌿 Offset CO₂ <span class="muted" id="pu-offset-c">0</span></button>
+          <button id="pu-double" class="pill">⚡ Double Step <span class="muted" id="pu-double-c">0</span></button>
+        </div>
+        <div id="screen-flash"></div>
+      </div>
+    </div>
+
+    <!-- Event/Quiz Modal -->
+    <div id="modal" class="modal">
+      <div class="card">
+        <div id="modal-title" class="card-hd">Event</div>
+        <div class="card-bd">
+          <div id="modal-desc" class="muted"></div>
+          <div id="choices" class="choices"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="help" class="modal">
+      <div class="card">
+        <div class="card-hd">How to Play</div>
+        <div class="card-bd">
+          <ul class="list">
+            <li>Roll the dice to move through 30 cells.</li>
+            <li>Balance 🌱 GP and 💨 CO₂ — reach the goal with enough GP.</li>
+            <li>Use power-ups wisely to sway tough rounds.</li>
+            <li>Hover cells to see what they do.</li>
+          </ul>
+          <div class="actions">
+            <button id="help-close" class="btn">Got it</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./scripts/data.js"></script>
+    <script src="./scripts/game.js"></script>
+  </body>
+</html>
